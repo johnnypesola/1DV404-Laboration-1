@@ -11,12 +11,11 @@ function NastStorsta()
         var inputsArray;
     
         // Felhantering
-        if(inputValue == ''){
-            alert("Var god skriv någonting i textrutan");
-            return false;
-        }
-        else if((inputValue.match(/[^\d\s\-]|\-[^\d]/) || []).length > 0 || inputValue[inputValue.length-1] == "-"){
-            alert("Var god skriv en serie nummer. Till exempel \"32423 -12141 12412 43 0\"");
+        if(  inputValue == '' ||
+            (inputValue.match(/[^\d\s\-]|\-[^\d]/) || []).length > 0 ||
+             inputValue[inputValue.length-1] == "-"){
+            
+            alert("Var god skriv tio heltal separerade med mellanslag.");
             return false;
         }
 
@@ -24,8 +23,8 @@ function NastStorsta()
         inputsArray = inputValue.trim().split(/\s+/);
         
         // Kollar om man har angett minst två värden
-        if(inputsArray.length < 2){
-            alert("Du måste ange minst två stycken nummer");
+        if(inputsArray.length !== 10){
+            alert("Du måste ange tio heltal");
             return false;
         }
         
@@ -35,7 +34,6 @@ function NastStorsta()
         });
         
         outputString = "Det nästhögsta värdet " + inputsArray[inputsArray.length-2];
-
 
         // Presentera resultatet för användaren
         document.getElementById('output').innerHTML = outputString;
