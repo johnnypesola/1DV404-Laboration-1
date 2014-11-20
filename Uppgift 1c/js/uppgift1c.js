@@ -42,8 +42,6 @@ function NastStorsta()
 
         }
         
-        console.log(highestValue + " This is higher than " + nextHighestValue);
-
         // Presentera resultatet för användaren
         document.getElementById('output').innerHTML = outputString;
 
