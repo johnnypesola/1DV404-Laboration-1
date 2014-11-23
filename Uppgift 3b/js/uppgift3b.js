@@ -20,10 +20,16 @@ function exec()
         }
         
         // Addera fraction objekt
-        alert(myFraction1.add(myFraction2).toString());
+        alert("Ditt bråktal adderad med bråktalet 10/20 blir " + myFraction1.add(myFraction2).toString());
         
         // Multiplicera fraction object
-        alert(myFraction1.multiply(myFraction2).toString());
+        alert("Ditt bråktal multiplicerad med bråktalet 10/20 blir " + myFraction1.multiply(myFraction2).toString());
+        
+        // Om bråktalsobjektet är negativt
+        alert("Om ditt bråktal är negativt: " + myFraction1.isNegative());
+        
+        // Om bråktalsobjekten är lika
+        alert("Ditt bråktal har samma värden som bråktalsobjektet med värdena 10/20: " + myFraction1.isEqualTo(myFraction2));
         
         return false;
         

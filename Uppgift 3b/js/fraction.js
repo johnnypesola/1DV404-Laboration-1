@@ -23,7 +23,6 @@ function Fraction(numerator, denominator){
     this.getDenominator = function(){
         return _denominator;
     }
-	
 }
 
 Fraction.prototype.add = function(otherFraction){
@@ -50,7 +49,6 @@ Fraction.prototype.multiply = function(otherFraction){
 }
 
 Fraction.prototype.isNegative = function(){
-    // Kollar värdena för sig om någon av dem är mindre än 0.
     return (this.getNumerator() < 0 || this.getDenominator() < 0);
 }
 
