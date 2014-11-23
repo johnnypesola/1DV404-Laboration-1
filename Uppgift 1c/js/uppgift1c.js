@@ -4,10 +4,10 @@ function NastStorsta()
 {
     var formObj = document.getElementById("user-input-form");
     var inputContainer = document.getElementById("input-container");
-    var numberOfInputs = 10;
+    var NUMBER_OF_INPUTS = 10;
 
     // Lägg till önskat många inputs i formen
-    for(var i = 0; i < numberOfInputs; i++)
+    for(var i = 0; i < NUMBER_OF_INPUTS; i++)
     {
         inputContainer.appendChild(document.createElement("input"));
     }
@@ -26,7 +26,7 @@ function NastStorsta()
             if(  inputs[i].value === '' ||
                 (inputs[i].value.match(/^-?[1-9]\d*$/) || []).length === 0){
                 
-                alert("Var god skriv totalt " + numberOfInputs + " heltal i varsit fält.");
+                alert("Var god skriv totalt " + NUMBER_OF_INPUTS + " heltal i varsit fält.");
                 return false;
             }
             
