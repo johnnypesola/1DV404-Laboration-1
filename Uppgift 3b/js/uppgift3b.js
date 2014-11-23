@@ -12,7 +12,7 @@ function exec()
         {
             var myFraction1 = new Fraction(numerator, denominator);
             
-            var myFraction2 = new Fraction(10, 20);
+            var myFraction2 = new Fraction(6, 3);
         }
         catch (error)
         {

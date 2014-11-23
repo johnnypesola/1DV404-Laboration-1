@@ -26,15 +26,39 @@ function Fraction(numerator, denominator){
 }
 
 Fraction.prototype.add = function(otherFraction){
+    
+    var commonDenominator;
+    var commonNumerator;
+    var tD = this.getDenominator();
+    var oD = otherFraction.getDenominator();
+    var tN = this.getNumerator();
+    var oN = otherFraction.getNumerator();
+    var returnFractionObj;
+    
     if(!(otherFraction instanceof Fraction))
     {
         throw new Error("argumentet måste vara av typen Fraction");
     }
     
-    var newNumerator = this.getNumerator() + otherFraction.getNumerator();
-    var newDenominator = this.getDenominator() + otherFraction.getDenominator();
-    
-    return new Fraction(newNumerator, newDenominator);
+    // Kollar om vi måste hitta gemensam nämnare
+    if(tD !== oD)
+    {
+        // Räkna ut gemensam nämnare
+        commonDenominator = tD * oD;
+        
+        // Räkna ut gemensamma täljare
+        commonNumerator = (tD * oN) + (tN * oD);
+        
+        // Skapar ett nytt bråktal av de uträknade värdena
+        returnFractionObj = new Fraction(commonNumerator, commonDenominator);
+    }
+    else
+    {
+        // Plussar ihop gemensamma nämnarna och skapar nytt bråktal
+        returnFractionObj = new Fraction((tN + oN), tD);
+    }
+
+    return returnFractionObj;
 }
 
 Fraction.prototype.multiply = function(otherFraction){
