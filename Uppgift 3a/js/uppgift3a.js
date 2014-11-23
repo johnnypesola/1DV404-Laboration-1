@@ -20,6 +20,7 @@ function Palindrom()
         // Använd skriven funktion för att kontrollera om den angivna strängen en är palindrom.
         outputString = inputValue + " är " + (isPalindrom(inputValue) ? '' : 'inte') + " en palindrom";
         
+        // Fler exempel på palindromer
         outputString += "<h5> Exempel på andra palindromer:</h5>";
         outputString += "naturrutan " + " är " + (isPalindrom("naturrutan") ? '' : 'inte') + " en palindrom<br>";
         outputString += "Vila sig i saliv" + " är " + (isPalindrom("Vila sig i saliv") ? '' : 'inte') + " en palindrom<br>";
