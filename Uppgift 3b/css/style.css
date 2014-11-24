@@ -2,3 +2,8 @@ input {
     display: block;
     margin: 0 0 5px 5px;
 }
+
+#output {
+    margin: 10px;
+    line-height: 24px;
+}
