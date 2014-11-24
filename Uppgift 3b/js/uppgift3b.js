@@ -7,6 +7,7 @@ function exec()
     formObj.onsubmit = function(){
         var numerator = document.getElementById("user-input-numerator").value;
         var denominator = document.getElementById("user-input-denominator").value;
+        var output = '';
     
         try
         {
@@ -20,16 +21,18 @@ function exec()
         }
         
         // Addera fraction objekt
-        alert("Ditt bråktal adderad med bråktalet 10/20 blir " + myFraction1.add(myFraction2).toString());
+        output += "<div>Ditt bråktal adderad med bråktalet 6/3 blir " + myFraction1.add(myFraction2).toString() + "</div>";
         
         // Multiplicera fraction object
-        alert("Ditt bråktal multiplicerad med bråktalet 10/20 blir " + myFraction1.multiply(myFraction2).toString());
+        output += "<div>Ditt bråktal multiplicerad med bråktalet 6/3 blir " + myFraction1.multiply(myFraction2).toString() + "</div>";
         
         // Om bråktalsobjektet är negativt
-        alert("Om ditt bråktal är negativt: " + myFraction1.isNegative());
+        output += "<div>Om ditt bråktal är negativt: " + myFraction1.isNegative() + "</div>";
         
         // Om bråktalsobjekten är lika
-        alert("Ditt bråktal har samma värden som bråktalsobjektet med värdena 10/20: " + myFraction1.isEqualTo(myFraction2));
+        output += "<div>Ditt bråktal har samma värden som bråktalsobjektet med värdena 6/3: " + myFraction1.isEqualTo(myFraction2) + "</div>";
+
+        document.getElementById("output").innerHTML = output;
         
         return false;
         
